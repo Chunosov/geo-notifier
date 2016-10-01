@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.project_orion.geonotifier">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!--<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>-->
+
+    <!-- Maps API needs OpenGL ES 2.0. -->
+    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--https://developers.google.com/maps/documentation/android-api/signup?hl=ru
+            com.google.android.geo.API_KEY является рекомендуемым именем метаданных для ключа API.
+            Ключ с таким именем может использоваться для аутентификации нескольких API-интерфейсов,
+            созданных на основе Google Карт для платформы Android, включая Google Maps Android API.
+            Для обеспечения обратной совместимости API также поддерживает имя com.google.android.maps.v2.API_KEY.
+            Это устаревшее имя обеспечивает аутентификацию только для Android Maps API v2.
+            Приложение позволяет указать только одно из имен в метаданных ключа API. -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBIsSZryHMEGEFXRK9bVEfLU2SHz9zIfMo"/>
+
+    </application>
+
+</manifest>
